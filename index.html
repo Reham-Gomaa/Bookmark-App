@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">    
+    <link rel="shortcut icon" href="images/bookmarker.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Bookmark</title>
+</head>
+<body>
+    <header class="text-center py-5">
+        <h1 class="position-relative d-inline-block">Bookmarker</h1>
+    </header>
+    <main>
+        <div id="top" class="container py-5">
+            <header class="d-flex justify-content-center align-items-center">
+                    <i class="before me-2 mb-2 fa-solid fa-bookmark fa-xl"></i>
+                    <h2 class="text-center">Bookmark your favorite sites</h2>
+                    <i class="after ms-2 mb-2 fa-solid fa-bookmark fa-xl"></i>
+            </header>
+            <section>
+                <div class="my-1">
+                    <i class="fa-solid fa-book-bookmark me-1"></i>
+                    <label for="bookmarkName" class="fw-bold mb-2">Site Name</label>
+                    <input type="text" class="form-control focused" oninput="validateName(this.value)" id="bookmarkName" placeholder="Bookmark Name">
+                </div>
+                <div class="my-4">
+                    <i class="fa-solid fa-link me-1"></i>
+                    <label for="siteURL" class="fw-bold mb-2">Site URL</label>
+                    <input type="url" class="form-control focused" oninput="validateURL(this.value)" id="siteURL" placeholder="Website URL">
+                </div>
+                <button type="button" onclick="submit()" id="btnSubmit" class="btn d-block mx-auto px-5">Submit</button>
+                <button type="button" onclick="update()" id="btnupdate" class="btn d-none mx-auto px-5">Update</button>
+               
+            </section>
+        </div>
+        <div class="container py-4">
+            <input type="text" oninput="search(this.value)" class="form-control mb-3 w-25 mx-auto" id="searchInput" placeholder="Type to search...">
+
+            <table class="table">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">Index</th>
+                    <th scope="col">Website Name</th>
+                    <th scope="col">Visit</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="bodyRows">
+                 
+                </tbody>
+              </table>
+        </div>
+    </main>
+    <div id="validationError" class="d-none">
+        <div class="modal  d-block" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content py-4 px-2">
+                    <div class="modal-header border-0 pb-2">
+                        <i class="fa-solid fa-circle fa-lg red-circle"></i>
+                        <i class="fa-solid fa-circle mx-2 fa-lg yellow-circle"></i>
+                        <i class="fa-solid fa-circle fa-lg green-circle"></i>
+                        <button type="button" onclick="closeModal()" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title m-2">Site Name or Url is not valid, Please follow the rules below :</h5>
+                        <div class="d-flex align-items-center my-3">
+                            <i class="fa-regular fa-circle-right red-circle me-2 ms-4 fa-6"></i>                                
+                            <p class="mb-0">Site name must contain at least 3 characters</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fa-regular fa-circle-right red-circle me-2 ms-4 fa-6"></i>                                
+                            <p class="mb-0">Site URL must be a valid one</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

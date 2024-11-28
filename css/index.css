@@ -1,0 +1,147 @@
+:root{
+    --dark-text-color : #212529;
+    --before-back-color : #fec260;
+    --gradient-color1 : #3ca55c;
+    --gradient-color2 : #b5ac49;
+    --submit-bg : #d1512d;
+    --submit-hover-bg : #bb4120;
+    --submit-hover-border : #a03315;
+    --visit-bg : #9eb23b;
+    --visit-hover-bg : #8a9e23;
+    --visit-hover-border : #6e8018;
+    --delete-bg : #eb1d36;
+    --delete-hover-bg : #d30820;
+    --delete-hover-border : #ba081d;
+    --red-circle : #f15f5d;
+    --yellow-circle : #febe2e;
+    --green-circle : #4db748;
+}
+.valid-shadow{
+    border-color: rgb(25, 135, 84) !important;
+    box-shadow: 0 0 0 3px rgba(25, 135, 84, .3) !important;
+}
+.invalid-shadow{
+    border-color: rgb(220, 53, 69) !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, .3) !important;
+}
+.red-circle{
+    color: var(--red-circle);
+}
+.yellow-circle{
+    color: var(--yellow-circle);
+}
+.green-circle{
+    color: var(--green-circle);
+}
+.close{
+    color: var(--dark-text-color);
+}
+.btn-close{
+    --bs-btn-close-opacity: 1;
+}
+body{
+    font-family: "PT Sans Caption", sans-serif;
+    color: var(-dark-text-color);
+    background-color: #f7ecde;
+}
+::selection{
+    background-color: var(--before-back-color);
+}
+h1{
+    font-family: "Pacifico", cursive;
+    font-weight: 500;
+    font-size: 3.125rem;
+    color: #352e28;
+}
+h2{
+    font-family: "Righteous", sans-serif;
+    font-weight: 500;
+    font-size: 1.5625rem;
+    color: var(-dark-text-color);
+}
+h5{
+    font-family: "Bree Serif", serif;
+    font-weight: 400;
+    font-size: 1.3125rem;
+    color: #352e28;
+}
+header h1::before{
+    content: '';
+    width: 100%;
+    height: 35%;
+    background-color: var(--before-back-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transition: height .5s ease;
+}
+header h1:hover::before{
+    height: 70%;
+}
+#top{
+    border-top: 2px dotted #352e28;
+    border-bottom: 2px dotted #352e28;
+}
+h2{
+    background-image: linear-gradient(to right, var(--gradient-color1), var(--gradient-color2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+main header .before{
+    color: var(--gradient-color1);
+}
+main header .after{
+    color: var(--gradient-color2);
+}
+.focused:focus,
+#searchInput:focus{
+    outline: none !important;
+    border-color: var(--before-back-color) !important;
+    box-shadow: 0 0 0 3px rgba(254, 194, 96, .3) !important;
+}
+#btnSubmit{
+    background-color: var(--submit-bg);
+    border-color: var(--submit-bg);
+    color: #fff;
+}
+#btnSubmit:hover{
+    background-color: var(--submit-hover-bg);
+    border-color: var(--submit-hover-border);
+}
+#btnupdate, #btnVisit, #btnDelete, #btnUpdate{
+    color: #fff;
+}
+#btnVisit, #btnupdate, #btnUpdate{
+    background-color: var(--visit-bg);
+    border-color: var(--visit-bg);
+}
+#btnVisit:hover,
+#btnupdate:hover,
+#btnUpdate:hover{
+    background-color: var(--visit-hover-bg);
+    border-color: var(--visit-hover-border);
+}
+#btnDelete{
+    background-color: var(--delete-bg);
+    border-color: var(--delete-bg);
+}
+#btnDelete:hover{
+    background-color: var(--delete-hover-bg);
+    border-color: var(--delete-hover-border);
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.modal{
+    --bs-modal-header-border-color: transparent;
+    top: 30%;
+}
+#validationError{
+    background-image: linear-gradient(rgba(0, 0, 0, .4) 0% 100%);
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+}
